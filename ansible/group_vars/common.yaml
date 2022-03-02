@@ -1,0 +1,3 @@
+#usa mismo direccionamiento interno . Ver video de dudas, minuto 32.
+master: '192.168.1.10'
+workers: '192.168.1.11'

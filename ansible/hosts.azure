@@ -1,0 +1,16 @@
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_user=terraform
+
+[master]
+lab-docker.frontend.lab
+
+[worker1]
+lab-podman.frontend.lab
+
+[worker2]
+lab-docker.frontend.lab
+lab-podman.frontend.lab
+
+[nfs]
+localhost ansible_user=jadebustos

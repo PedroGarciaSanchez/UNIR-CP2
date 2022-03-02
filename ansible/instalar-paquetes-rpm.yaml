@@ -1,0 +1,4 @@
+-name: instalar paquetes
+  hosts: all
+  gather_facts: false
+  roles: instalar
