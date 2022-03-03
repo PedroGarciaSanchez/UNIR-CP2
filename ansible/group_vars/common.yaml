@@ -1,3 +1,4 @@
 #usa mismo direccionamiento interno . Ver video de dudas, minuto 32.
-master: '192.168.1.10'
-workers: '192.168.1.11'
+master: '10.0.1.10'
+workers: '10.0.1.11'
+nfs: '10.0.1.13'

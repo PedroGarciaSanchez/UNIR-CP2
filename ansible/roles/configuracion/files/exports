@@ -1,0 +1,2 @@
+/srv/nfs my-master-azure-vm(rw,sync)
+/srv/nfs my-worker1-azure-vm(rw,sync)

@@ -1,0 +1,7 @@
+#con este rol, cuando queramos desplegar el nfs en otra mák, en vez de modificar el fichero en el rol,
+# cambiamos las variables con los valores nuevos
+nfs-dir: 'srv/nfs'
+#master: 'master.acme.es'
+#workers: 'workers.acme.es'
+master: 'my-master-azure-vm'
+workers: 'my-worker1-azure-vm'

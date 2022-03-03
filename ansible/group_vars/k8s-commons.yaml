@@ -1,0 +1,2 @@
+rpms: ['nfs-utils','nfs4-acl-tools','wget']
+
