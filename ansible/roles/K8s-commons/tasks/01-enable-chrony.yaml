@@ -1,21 +1,21 @@
--name: set-timezone
+- name: set-timezone
   command: "timedatectl set-timezone Europe/Madrid"
   become: true  
 
--name: instalar paquetes rpm 
-dnf: 
-  name: 'chrony'
-  state: present
-become:true  
+- name: instalar paquetes rpm 
+  dnf: 
+    name: 'chrony'
+    state: present
+  become:true  
 
 - name: enable chronyd
-    command: "systemctl enable chronyd"
+  command: "systemctl enable chronyd"
   become: true  
 
--name: start chronyd
+- name: start chronyd
   command: "systemctl start chronyd"
   become: true    
 
--name: timedatectl set-ntp true
+- name: timedatectl set-ntp true
   command: "timedatectl set-ntp true"
   become: true  
