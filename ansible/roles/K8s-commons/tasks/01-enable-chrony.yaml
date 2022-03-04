@@ -6,7 +6,7 @@
   dnf: 
     name: 'chrony'
     state: present
-  become:true  
+  become: true  
 
 - name: enable chronyd
   command: "systemctl enable chronyd"
