@@ -1,0 +1,7 @@
+-name: instalar master
+  hosts: all
+  var_files:
+  -"group_vars/k8s-master.yaml"
+  gather_facts: false
+  roles: 
+  -k8s-master
