@@ -1,4 +1,4 @@
--name: instalar en todas las maquinas
+- name: instalar en todas las maquinas
   hosts: all
   var_files:
     - "group_vars/k8s-commons.yaml"
