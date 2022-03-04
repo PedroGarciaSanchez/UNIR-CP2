@@ -1,6 +1,6 @@
 - name: instalar en todas las maquinas
   hosts: all
-  var_files:
+  vars_files:
     - "group_vars/k8s-commons.yaml"
   gather_facts: false
   roles: 
