@@ -1,6 +1,6 @@
 - name: crea nfs exports directory
   file:
-    path: "{{nfs-dir}}"
+    path: "{{ nfsdir }}"
     state: directory
     owner: root
     group: root
