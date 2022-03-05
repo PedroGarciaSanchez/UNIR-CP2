@@ -15,7 +15,7 @@
   become: true   
 
 - name: comunicacion de PODS en el cluster mediante VXLAN paso 3
-  command: "firewall-cmd –reload"
+  command: "firewall-cmd --reload"
   become: true       
 
    
