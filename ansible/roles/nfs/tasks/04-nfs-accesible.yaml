@@ -6,31 +6,30 @@
   command: "exportfs -s"
   become: true    
 
-# Didn't work: couldn't resolve module/action firewalld
+# Didn't work: couldn't resolve module/action ansible.posix.firewalld
 
-- name: FirewallD rules
-  ansible.posix.firewalld:
-    permanent: yes
-    immediate: yes
-    #service: "{{ item }}"
-    service: "nfs"
-    state: enabled
-  #with_items:
-  # - nfs
-  # - rpc-bind
-  # - mountd
+#- name: FirewallD rules
+#  ansible.posix.firewalld:
+#    permanent: yes
+#    immediate: yes
+#    service: "{{ item }}"
+#    state: enabled
+#  with_items:
+#   - nfs
+#   - rpc-bind
+#   - mountd
 
-#- name: apply config step 2
-#  command: "firewall-cmd --permanent --add-service=nfs"
-#  become: true    
+- name: add-service=nfs
+  command: "firewall-cmd --permanent --add-service=nfs"
+  become: true    
 
-#- name: apply config step 2
-#  command: "firewall-cmd --permanent --add-service=rpc-bind"
-#  become: true    
+- name: add-service=rpc-bind
+  command: "firewall-cmd --permanent --add-service=rpc-bind"
+  become: true    
 
-#- name: apply config step 2
-#  command: "firewall-cmd --permanent --add-service=mountd"
-#  become: true        
+- name: add-service=mountd
+  command: "firewall-cmd --permanent --add-service=mountd"
+  become: true        
 
 - name: firewall reload
   command: "firewall-cmd --reload"

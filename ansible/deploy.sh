@@ -1,4 +1,5 @@
 #!/bin/bash
+ansible-galaxy collection install ansible.posix
 ssh-keygen -f known_hosts x.x.x.master
 ssh-keygen -f known_hosts x.x.x.worker1
 ssh-keygen -f known_hosts x.x.x.nfs
