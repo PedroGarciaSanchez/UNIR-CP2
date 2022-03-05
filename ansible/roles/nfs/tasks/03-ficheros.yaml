@@ -1,0 +1,8 @@
+- name: crea nfs exports directory
+  file:
+    path: "{{nfs-dir}}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0644
+  become: true  

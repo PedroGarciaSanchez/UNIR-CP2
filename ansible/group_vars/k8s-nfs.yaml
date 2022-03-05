@@ -1,1 +1,4 @@
 rpm: ['net-tools']
+nfs-dir: 'srv/nfs'
+master: 'my-master-azure-vm'
+workers: 'my-worker1-azure-vm'
