@@ -12,11 +12,11 @@
     mode: '0644'  
   become: true    
 
-- name: Configurar modulos del kernel necesarios para CRI-O
-    copy:
-      dest: "/etc/modules-load.d/crio.conf"
-      content: |
-        overlay
-        br_netfilter
-  become: true      
+# - name: Configurar modulos del kernel necesarios para CRI-O
+#     copy:
+#       dest: "/etc/modules-load.d/crio.conf"
+#       content: |
+#         overlay
+#         br_netfilter
+#   become: true      
        
