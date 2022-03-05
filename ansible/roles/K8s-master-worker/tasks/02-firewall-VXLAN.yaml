@@ -1,0 +1,22 @@
+- name: enable firewalld
+  command: "systemctl enable firewalld"
+  become: true    
+
+- name: start firewalld
+  command: "systemctl start firewalld"
+  become: true    
+
+- name: comunicacion de PODS en el cluster mediante VXLAN paso 1
+  command: "modprobe br_netfilter"
+  become: true    
+
+- name: comunicacion de PODS en el cluster mediante VXLAN paso 2
+  command: "firewall-cmd --add-masquerade --permanent"
+  become: true   
+
+- name: comunicacion de PODS en el cluster mediante VXLAN paso 3
+  command: "firewall-cmd –reload"
+  become: true       
+
+   
+

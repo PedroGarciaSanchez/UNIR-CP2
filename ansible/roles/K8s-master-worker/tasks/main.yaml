@@ -1,0 +1,5 @@
+- include_tasks: 01-dns.yaml 
+- include_tasks: 02-firewall-VXLAN.yaml
+- include_tasks: 03-K8s-traffic-with-firewall.yaml
+- include_tasks: 04-install-CRI-O.yaml
+- include_tasks: 05-install-K8s.yaml

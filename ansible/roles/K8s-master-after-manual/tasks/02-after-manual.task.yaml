@@ -1,0 +1,30 @@
+
+Instalamos el plugin CNI (Container Network Interface) de kubernetes y definimos la red de los PODs:
+kubeadm init --pod-network-cidr 192.169.0.0/16
+Command
+OJO, que haquí está la parte manual!!
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 192.168.1.110:6443 --token gmk4le.8gsfpknu99k78qut \
+    --discovery-token-ca-cert-hash sha256:d2cd35c9ab95f4061aa9d9b993f7e8742b2307516a3632b27ea10b64baf8cd71 
+[root@kubemaster ~]# 
+
+
+Para que el usuario root (aunque esto debería hacerse con el adminUsername, ver cómo) pueda utilizar kubectl para operar el cluster bastaría con ejecutar:
+[root@kubemaster ~]# export KUBECONFIG=/etc/kubernetes/admin.conf
+Command
+
+Vamos a autorizar al usuario root acceder al cluster para terminar la configuración de la forma habitual con la que lo haremos para el resto de usuarios:
+[root@kubemaster ~]# mkdir -p /root/.kube
+file
+[root@kubemaster ~]# cp -i /etc/kubernetes/admin.conf /root/.kube/config
+command
+[root@kubemaster ~]# chown $(id -u):$(id -g) /root/.kube/config
+command
+
+[root@kubemaster ~]# kubectl get nodes
+command
