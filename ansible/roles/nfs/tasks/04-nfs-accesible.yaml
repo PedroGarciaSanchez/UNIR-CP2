@@ -1,0 +1,22 @@
+- name: apply config step 1
+  command: "exportfs -r"
+  become: true  
+
+- name: apply config step 2
+  command: "exportfs -s"
+  become: true    
+
+- name: FirewallD rules
+  firewalld:
+    permanent: yes
+    immediate: yes
+    service: "{{ item }}"
+    state: enabled
+  with_items:
+   - nfs
+   - rpc-bind
+   - mountd
+
+- name: firewall reload
+  command: "firewall-cmd --reload"
+  become: true    
