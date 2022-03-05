@@ -18,8 +18,6 @@
 #   - nfs
 #   - rpc-bind
 #   - mountd
-sudo systemctl enable firewalld
-sudo systemctl start firewalld
 
 - name: enable firewalld
   command: "systemctl enable firewalld"
