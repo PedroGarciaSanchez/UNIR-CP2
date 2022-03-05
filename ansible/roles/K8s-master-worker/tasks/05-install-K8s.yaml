@@ -77,7 +77,7 @@
 
 
 - name: install K8s 1
-  command: "dnf install kubelet kubeadm kubectl --disableexcludes=Kubernete -y"
+  command: "dnf install kubelet-1.21.9-0 kubeadm-1.21.9-0 kubectl-1.21.9-0 --disableexcludes=kubernetes -y"
   become: true 
 
 - name: install K8s 2
