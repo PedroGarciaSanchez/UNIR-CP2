@@ -1,4 +1,4 @@
-rpm: ['net-tools']
+rpm: ['net-tools','firewalld']
 nfsdir: 'srv/nfs'
 master: 'my-master-azure-vm'
 workers: 'my-worker1-azure-vm'
