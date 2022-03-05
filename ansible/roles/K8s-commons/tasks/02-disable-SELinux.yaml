@@ -1,10 +1,15 @@
-- name: set-timezone
-  command: "ansible-galaxy collection install ansible.posix"
-  become: true  
+#Commented: didn't work: https://docs.ansible.com/ansible/latest/collections/ansible/posix/selinux_module.html
+#- name: set-timezone
+#  command: "ansible-galaxy collection install ansible.posix"
+#  become: true  
 
-- name: Disable SELinux
-  ansible.posix.selinux:
+#- name: Disable SELinux
+#  ansible.posix.selinux:
+#    state: disabled
+#  become: true   
+
+
+- name: Disabling SELinux state
+  selinux:
     state: disabled
-  become: true   
-
-
+   become: true    
