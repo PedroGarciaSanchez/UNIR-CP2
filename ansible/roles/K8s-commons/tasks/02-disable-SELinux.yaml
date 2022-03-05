@@ -8,8 +8,12 @@
 #    state: disabled
 #  become: true   
 
+#This didn`t work either
+#- name: Disabling SELinux state
+#  selinux:
+#    state: disabled
+#  become: true    
 
-- name: Disabling SELinux state
-  selinux:
-    state: disabled
-  become: true    
+- name: Disabling SELinux
+  command: "sed -i s/=enforcing/=disabled/g /etc/selinux/config"
+  become: true  
