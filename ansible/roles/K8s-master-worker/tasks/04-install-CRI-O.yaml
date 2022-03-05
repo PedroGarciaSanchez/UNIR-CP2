@@ -18,5 +18,26 @@
 #       content: |
 #         overlay
 #         br_netfilter
-#   become: true      
+#   become: true
+
+- name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
+  ansible.builtin.file:
+    path: /etc/modules-load.d/crio.conf
+    state: touch
+    mode: u=rw,g=r,o=r
+  become: true          
+
+- name: Add a line 
+  ansible.builtin.lineinfile:
+    path: /etc/modules-load.d/crio.conf
+    line: overlay
+    create: yes
+  become: true       
+       
+- name: Add a line 
+  ansible.builtin.lineinfile:
+    path: /etc/modules-load.d/crio.conf
+    line: br_netfilter
+    create: yes
+  become: true     
        
