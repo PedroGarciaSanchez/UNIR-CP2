@@ -75,22 +75,16 @@
     create: yes
   become: true      
 
-    
-  
 
-
-
-
-
-- name: install K8s
-  command: "dnf install -y kubelet kubeadm kubectl --disableexcludes=Kubernetes"
+- name: install K8s 1
+  command: "dnf install kubelet kubeadm kubectl -y --disableexcludes=Kubernetes"
   become: true 
 
-- name: install K8s
+- name: install K8s 2
   command: "systemctl enable kubelet"
   become: true 
 
-- name: install K8s
+- name: install K8s 3
   command: "systemctl start kubelet"
   become: true     
 
