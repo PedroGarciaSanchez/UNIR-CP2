@@ -6,9 +6,7 @@
   command: "exportfs -s"
   become: true    
 
-- name: set-timezone
-  command: "ansible-galaxy collection install ansible.posix"
-  become: true 
+# Didn't work: couldn't resolve module/action firewalld
 
 - name: FirewallD rules
   firewalld:
@@ -20,6 +18,18 @@
    - nfs
    - rpc-bind
    - mountd
+
+#- name: apply config step 2
+#  command: "firewall-cmd --permanent --add-service=nfs"
+#  become: true    
+
+#- name: apply config step 2
+#  command: "firewall-cmd --permanent --add-service=rpc-bind"
+#  become: true    
+
+#- name: apply config step 2
+#  command: "firewall-cmd --permanent --add-service=mountd"
+#  become: true        
 
 - name: firewall reload
   command: "firewall-cmd --reload"
