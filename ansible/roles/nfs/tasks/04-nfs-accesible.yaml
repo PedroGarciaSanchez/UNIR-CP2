@@ -9,15 +9,16 @@
 # Didn't work: couldn't resolve module/action firewalld
 
 - name: FirewallD rules
-  firewalld:
+  ansible.posix.firewalld:
     permanent: yes
     immediate: yes
-    service: "{{ item }}"
+    #service: "{{ item }}"
+    service: "nfs"
     state: enabled
-  with_items:
-   - nfs
-   - rpc-bind
-   - mountd
+  #with_items:
+  # - nfs
+  # - rpc-bind
+  # - mountd
 
 #- name: apply config step 2
 #  command: "firewall-cmd --permanent --add-service=nfs"
