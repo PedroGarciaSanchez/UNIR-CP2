@@ -37,8 +37,8 @@
     create: yes 
   become: true          
 
-- name: sysctl –system
-  command: "sysctl –system"
+- name: sysctl --system
+  command: "sysctl --system"
   become: true    
 
 - name: swapoff  -a
