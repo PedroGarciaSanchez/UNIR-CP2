@@ -4,4 +4,4 @@
     - "group_vars/k8s-nfs.yaml"
   gather_facts: false
   roles: 
-    - K8s-nfs
+    - k8s-nfs
