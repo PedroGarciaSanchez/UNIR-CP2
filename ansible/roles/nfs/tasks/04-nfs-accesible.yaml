@@ -6,6 +6,10 @@
   command: "exportfs -s"
   become: true    
 
+- name: set-timezone
+  command: "ansible-galaxy collection install ansible.posix"
+  become: true 
+
 - name: FirewallD rules
   firewalld:
     permanent: yes
