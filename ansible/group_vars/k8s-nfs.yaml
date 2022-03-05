@@ -1,1 +1,1 @@
-rpms-nfs: ['nfs-utils','net-tools']
+rpms-nfs: ['net-tools']

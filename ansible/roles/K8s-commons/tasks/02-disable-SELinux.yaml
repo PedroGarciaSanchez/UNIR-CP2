@@ -1,5 +1,10 @@
+- name: set-timezone
+  command: "ansible-galaxy collection install ansible.posix"
+  become: true  
+
 - name: Disable SELinux
   ansible.posix.selinux:
     state: disabled
   become: true   
+
 

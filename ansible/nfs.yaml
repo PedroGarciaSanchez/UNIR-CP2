@@ -1,0 +1,7 @@
+- name: enable nfs
+  hosts: all
+  vars_files:
+    - "group_vars/k8s-nfs.yaml"
+  gather_facts: false
+  roles: 
+    - K8s-nfs
