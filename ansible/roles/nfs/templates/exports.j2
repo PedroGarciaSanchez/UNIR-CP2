@@ -1,7 +1,2 @@
-{% comment este fichero coge nfs-dir= srv/nfs de configuracion.yaml %}
-{% comment: y coge master = my-master-azure-vm %}
-{% comment: y coge workers = my-worker1-azure-vm %}
-{% lo usa 01-template.yaml: dice que en el /etc/exports de Azure se pongan estas lineas %}
-{% configuracion.yaml son solo variables de config  %}
 {{nfs-dir}} {{master}}(rw,sync)
 {{nfs-dir}} {{workers}}(rw,sync)
