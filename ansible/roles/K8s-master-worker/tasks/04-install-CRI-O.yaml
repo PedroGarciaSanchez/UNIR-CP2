@@ -3,12 +3,14 @@
     url: https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/CentOS_8_Stream/devel:kubic:libcontainers:stable.repo
     dest: /etc/yum.repos.d/devel:kubic:libcontainers:stable.repo
     mode: '0644'
+  become: true  
 
 - name: Download crio.repo
   get_url:
     url:  https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable:cri-o:1.23:1.23.1/CentOS_8_Stream/devel:kubic:libcontainers:stable:cri-o:1.23:1.23.1.repo
     dest: /etc/yum.repos.d/devel:kubic:libcontainers:stable:cri-o:1.23:1.23.1.repo
-    mode: '0644'    
+    mode: '0644'  
+  become: true    
 
 - name: Configurar modulos del kernel necesarios para CRI-O
     copy:
@@ -16,4 +18,5 @@
       content: |
         overlay
         br_netfilter
+  become: true      
        
