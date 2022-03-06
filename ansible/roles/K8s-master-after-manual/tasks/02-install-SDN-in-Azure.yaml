@@ -1,0 +1,4 @@
+- name: install SDN in Azure
+  command: "kubectl apply -f https://docs.projectcalico.org/manifests/canal.yaml"
+  become: true 
+

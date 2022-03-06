@@ -1,8 +1,8 @@
--name: instalar paquetes
+- name: instalar paquetes
   hosts: all
   var_files:
   -"group_vars/k8s-workers.yaml"
   gather_facts: false
   roles: 
-  -k8s-worker1
+  - K8s-workers
   
