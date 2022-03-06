@@ -1,21 +1,23 @@
 - name: Add a line to a file if the file does not exist, without passing regexp
   ansible.builtin.lineinfile:
     path: /etc/exports
-    line: 20.126.59.242 kubemaster my-master-azure-vm
+    line: 20.123.180.50 kubemaster my-master-azure-vm
     create: yes
   become: true  
 
 - name: Add a line to a file if the file does not exist, without passing regexp
   ansible.builtin.lineinfile:
     path: /etc/exports
-    line: 20.126.129.132 kubenode1 my-worker1-azure-vm
+    line: 20.23.228.230 kubenode1 my-worker1-azure-vm
     create: yes
   become: true      
 
 - name: Add a line to a file if the file does not exist, without passing regexp
   ansible.builtin.lineinfile:
     path: /etc/exports
-    line: 20.126.99.216 nfs my-NFS-azure-vm
+    line: 20.123.182.147 nfs my-NFS-azure-vm
     create: yes
-  become: true     
+  become: true   
+
+
 
