@@ -39,9 +39,9 @@
   become: true  
 
 - name: Add a line 
-  #command: "sed -i 's/['kubernetes']'/[kubernetes]/g' /etc/yum.repos.d/kubernetes.repo"
+  #command: "sed -i 's/[\'kubernetes\']'/[kubernetes]/g' /etc/yum.repos.d/kubernetes.repo"
   #command: "sed -i 's/'//g' /etc/yum.repos.d/kubernetes.repo"
-  command: "sed 's/\x27/ /g' /etc/yum.repos.d/kubernetes.repo"
+  command: "sed -i 's/\x27//g' /etc/yum.repos.d/kubernetes.repo"
   #command: "sed '0,/['kubernetes']/s/['kubernetes']/[kubernetes]/' /etc/yum.repos.d/kubernetes.repo"
   become: true 
   #sed '0,/Apple/{s/Apple/Banana/}' input_filename
