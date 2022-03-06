@@ -8,7 +8,6 @@ sudo ssh adminUsername@20.126.82.81
 sudo ssh adminUsername@20.126.22.70
 
 
-
 sudo ansible-playbook -i hosts k8s-01-common.yaml
 sudo ansible-playbook -i hosts -l nfs nfs.yaml
 sudo ansible-playbook -i hosts -l master,worker k8s-05-master-worker.yaml
