@@ -19,25 +19,29 @@
     mode: u=rwx,g=rwx,o=rwx
   become: true          
 
-- name: Add a line 
-  command: "sudo echo \"[kubernetes1]\"  > /etc/yum.repos.d/kubernetes.repo"
-  become: true   
-
-- name: Add a line 
-  command: "sudo echo \"[kubernetes2]\"  > /etc/yum.repos.d/kubernetes.repo"
-
-- name: Add a line 
-  command: "sudo echo \"[kubernetes3]\"  >> /etc/yum.repos.d/kubernetes.repo"
-  become: true   
-   
+# - name: Add a line 
+#   command: "sudo echo \"[kubernetes1]\"  > /etc/yum.repos.d/kubernetes.repo"
+#   become: true   
 
 # - name: Add a line 
-#   ansible.builtin.lineinfile:
-#     path: /etc/yum.repos.d/kubernetes.repo
-#     line: [kubernetes]
-#     create: yes
-#   become: true      
+#   command: "sudo echo \"[kubernetes2]\"  > /etc/yum.repos.d/kubernetes.repo"
 
+# - name: Add a line 
+#   command: "sudo echo \"[kubernetes3]\"  >> /etc/yum.repos.d/kubernetes.repo"
+#   become: true   
+   
+
+- name: Add a line 
+  ansible.builtin.lineinfile:
+    path: /etc/yum.repos.d/kubernetes.repo
+    line: [kubernetes]
+    create: yes
+  become: true  
+
+- name: Add a line 
+  command: "sed -i 's/['kubernetes']/[kubernetes]/g' /etc/yum.repos.d/kubernetes.repo"
+  become: true   
+    
 - name: Add a line 
   ansible.builtin.lineinfile:
     path: /etc/yum.repos.d/kubernetes.repo
