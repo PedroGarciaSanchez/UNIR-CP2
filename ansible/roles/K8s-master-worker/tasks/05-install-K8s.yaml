@@ -39,9 +39,13 @@
   become: true  
 
 - name: Add a line 
-  command: "sed -i 's/['kubernetes']/[kubernetes]/g' /etc/yum.repos.d/kubernetes.repo"
-  become: true   
+  #command: "sed -i 's/['kubernetes']/[kubernetes]/g' /etc/yum.repos.d/kubernetes.repo"
+  command: "sed '0,/['kubernetes']/{s/['kubernetes']/[kubernetes]/}' /etc/yum.repos.d/kubernetes.repo"
+  become: true 
+  #sed '0,/Apple/{s/Apple/Banana/}' input_filename
     
+    
+
 - name: Add a line 
   ansible.builtin.lineinfile:
     path: /etc/yum.repos.d/kubernetes.repo
