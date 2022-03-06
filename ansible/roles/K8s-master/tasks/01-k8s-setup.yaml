@@ -1,18 +1,38 @@
-- name: firewalld setup 1
-  command: "firewall-cmd --permanent --add-port=6443/tcp"
-  become: true  
+#- name: firewalld setup 1
+#  command: "firewall-cmd --permanent --add-port=6443/tcp"
+#  become: true  
 
-- name: firewalld setup 2
-  command: "firewall-cmd --permanent --add-port=2379-2380/tcp"
-  become: true  
+# - name: permit traffic in default zone on port 6443/tcp 
+#     firewalld: 
+#       port: 6443/tcp 
+#       permanent: yes 
+#       immediate: yes
+#       state: enabled
+#   become: true
 
-- name: firewalld setup 3
-  command: "firewall-cmd --permanent --add-port=10250-10252/tcp"
-  become: true  
+- name: FirewallD rules
+    firewalld:
+      permanent: yes
+      immediate: yes
+      port: "{{item.port}}/{{item.proto}}"
+      state: enabled
+    with_items:
+     - {port: "6443",proto: "tcp"}
+     - {port: "2379-2380",proto: "tcp"}
+     - {port: "10250-10252", proto: "tcp" }
+     - {port: "10255",proto: "tcp"}      
+   
+# - name: firewalld setup 2
+#   command: "firewall-cmd --permanent --add-port=2379-2380/tcp"
+#   become: true  
+
+# - name: firewalld setup 3
+#   command: "firewall-cmd --permanent --add-port=10250-10252/tcp"
+#   become: true  
   
-- name: firewalld setup 4
-  command: "firewall-cmd --permanent --add-port=10255/tcp"
-  become: true  
+# - name: firewalld setup 4
+#   command: "firewall-cmd --permanent --add-port=10255/tcp"
+#   become: true  
         
 - name: firewalld setup 5
   command: "firewall-cmd --reload"
@@ -23,7 +43,8 @@
   become: true  
 
 - name: Permitiremos el acceso desde los workers 1
-  command: "firewall-cmd --permanent --add-rich-rule 'rule family=ipv4 source address=20.126.82.81/32 accept'"
+  #command: "firewall-cmd --permanent --add-rich-rule 'rule family=ipv4 source address=20.126.82.81/32 accept'"
+  command: "firewall-cmd --permanent --add-rich-rule 'rule family=ipv4 source address=10.0.1.11/32 accept'"
   become: true  
 
 - name: Permitiremos el acceso desde los workers 2
