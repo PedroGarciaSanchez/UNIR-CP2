@@ -52,9 +52,9 @@
 
 - name: eliminar la línea del fichero /etc/fstab que monta en el arranque el swap
   ansible.builtin.lineinfile:
-    path: /etc/sudoers
+    path: /etc/fstab
     state: absent
-    regexp: '^%/etc/fstab'
+    regexp: '^%swap'
   become: true  
 
 
