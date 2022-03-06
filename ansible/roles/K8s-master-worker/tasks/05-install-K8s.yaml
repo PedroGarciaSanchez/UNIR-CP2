@@ -40,10 +40,10 @@
 
 - name: Add a line 
   #command: "sed -i 's/['kubernetes']/[kubernetes]/g' /etc/yum.repos.d/kubernetes.repo"
-  command: "sed '0,/['kubernetes']/{s/['kubernetes']/[kubernetes]/}' /etc/yum.repos.d/kubernetes.repo"
+  command: "sed '0,/['kubernetes']/s/['kubernetes']/[kubernetes]/' /etc/yum.repos.d/kubernetes.repo"
   become: true 
   #sed '0,/Apple/{s/Apple/Banana/}' input_filename
-    
+  #sed '0,/pattern/s/pattern/replacement/' filename 
     
 
 - name: Add a line 
