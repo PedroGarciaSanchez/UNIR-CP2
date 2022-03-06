@@ -1,4 +1,5 @@
 - name: install SDN in Azure
   command: "kubectl apply -f https://docs.projectcalico.org/manifests/canal.yaml"
-  become: true 
+ #esto debería evitar el problema de Marcos
+ #become: true 
 

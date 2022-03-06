@@ -20,11 +20,15 @@
   become: true          
 
 - name: Add a line 
-  ansible.builtin.lineinfile:
-    path: /etc/yum.repos.d/kubernetes.repo
-    line: [kubernetes]
-    create: yes
-  become: true      
+  command: "echo \"[kubernetes]\"  >> /etc/yum.repos.d/kubernetes.repo"
+  become: true    
+
+# - name: Add a line 
+#   ansible.builtin.lineinfile:
+#     path: /etc/yum.repos.d/kubernetes.repo
+#     line: [kubernetes]
+#     create: yes
+#   become: true      
 
 - name: Add a line 
   ansible.builtin.lineinfile:
