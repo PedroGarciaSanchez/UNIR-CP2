@@ -20,7 +20,7 @@
   become: true          
 
 - name: Add a line 
-  command: "echo \"[kubernetes]\"  >> /etc/yum.repos.d/kubernetes.repo"
+  command: "sudo echo \"[kubernetes]\"  >> /etc/yum.repos.d/kubernetes.repo"
   become: true    
 
 # - name: Add a line 
