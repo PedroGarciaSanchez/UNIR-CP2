@@ -1,8 +1,10 @@
 #!/bin/bash
+#ssh-keygen -f C:\Users\usuariox\.ssh\known_hosts -R 10.71.149.89
 ansible-galaxy collection install ansible.posix
-ssh-keygen -f /home/pedrogsa/known_hosts x.x.x.master
-ssh-keygen -f /home/pedrogsa/known_hosts x.x.x.worker1
-ssh-keygen -f /home/pedrogsa/known_hosts x.x.x.nfs
+#Antes de lanzar el primer pllaybook, que va a atodas las máquinas
+sudo ssh-keygen -f /home/pedrogsa/known_hosts -R 20.123.180.50
+sudo ssh-keygen -f /home/pedrogsa/known_hosts -R 20.23.228.230
+sudo ssh-keygen -f /home/pedrogsa/known_hosts -R 20.123.182.147
 
 ansible-playbook -i hosts k8s-01-common.yaml
 ansible-playbook -i hosts -l nfs nfs.yaml
