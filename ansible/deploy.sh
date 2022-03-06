@@ -3,9 +3,11 @@
 sudo ansible-galaxy collection install ansible.posix
 #Antes de lanzar el primer pllaybook, que va a atodas las máquinas
 #entrar en las máquinas y salir con logout, para que quedeen registradas en known_hosts
-sudo ssh adminUsername@20.123.180.50
-sudo ssh adminUsername@20.23.228.230
-sudo ssh adminUsername@20.123.182.147
+sudo ssh adminUsername@20.126.54.157
+sudo ssh adminUsername@20.126.82.81
+sudo ssh adminUsername@20.126.22.70
+
+
 
 sudo ansible-playbook -i hosts k8s-01-common.yaml
 sudo ansible-playbook -i hosts -l nfs nfs.yaml
