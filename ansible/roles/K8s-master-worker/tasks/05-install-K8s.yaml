@@ -20,8 +20,16 @@
   become: true          
 
 - name: Add a line 
-  command: "sudo echo \"[kubernetes]\"  >> /etc/yum.repos.d/kubernetes.repo"
-  become: true    
+  command: "sudo echo \"[kubernetes1]\"  > /etc/yum.repos.d/kubernetes.repo"
+  become: true   
+
+- name: Add a line 
+  command: "sudo echo \"[kubernetes2]\"  > /etc/yum.repos.d/kubernetes.repo"
+
+  - name: Add a line 
+  command: "sudo echo \"[kubernetes3]\"  >> /etc/yum.repos.d/kubernetes.repo"
+  become: true   
+   
 
 # - name: Add a line 
 #   ansible.builtin.lineinfile:
