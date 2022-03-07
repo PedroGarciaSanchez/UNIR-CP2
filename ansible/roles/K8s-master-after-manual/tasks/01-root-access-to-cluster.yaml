@@ -1,6 +1,6 @@
-- name: export KUBECONFIG
-  command: "export KUBECONFIG=/etc/kubernetes/admin.conf"
-  become: true 
+#- name: export KUBECONFIG
+#  command: "export KUBECONFIG=/etc/kubernetes/admin.conf"
+#  become: true 
 
 # Ojo: esto en la guia es con root pero se nos ha dicho que lo hagmos con adminUsername
 - name: Create a directory /adminUsername/.kube if it does not exist
@@ -29,7 +29,25 @@
 # [root@kubemaster ~]# chown $(id -u):$(id -g) /root/.kube/config
 # command
 
+- name: Añadimos el repo de kubernetes a /etc/sudoers.d/
+  copy:
+    src: adminUsername
+    dest: /etc/sudoers.d/adminUsername
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+  become: true  
+
+#[root@kubemaster ~]# cat <<EOF > /etc/sudoers.d/adminUsername
+#> ALL            ALL = (ALL) NOPASSWD: ALL
+#> EOF
+
 
 #Comprobar con:
 #  command: "kubectl get nodes"
+
+#[root@kubemaster ~]# mkdir -p /home/kubeadmin/.kube
+#[root@kubemaster ~]# cp -i /etc/kubernetes/admin.conf /home/kubeadmin/.kube/config
+#[root@kubemaster ~]# chown kubeadmin. /home/kubeadmin/.kube/config
+
  
