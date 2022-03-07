@@ -39,5 +39,36 @@
     path: /etc/modules-load.d/crio.conf
     line: br_netfilter
     create: yes
-  become: true     
+  become: true    
+
+#  [root@host ~]# dnf install cri-o -y
+#[root@host ~]# systemctl enable crio
+#[root@host ~]# systemctl start crio
+
+- name: instalar paquetes rpm 
+  dnf: 
+    name: 'cri-o'
+    state: present
+  become: true  
+
+
+# - name: Make sure a firewall is running
+#   systemd:
+#     state: started
+#     name: crio
+#     enabled: yes
+#   become: true 
+
+- name: systemctl enable crio
+  command: "systemctl enable crio"
+  become: true  
+
+- name: systemctl start crio
+  command: "systemctl start crio"
+  become: true    
+
+
+
+
+
        
