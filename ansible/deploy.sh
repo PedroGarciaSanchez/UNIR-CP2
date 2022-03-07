@@ -3,14 +3,17 @@
 sudo ansible-galaxy collection install ansible.posix
 #Antes de lanzar el primer pllaybook, que va a atodas las máquinas
 #entrar en las máquinas y salir con logout, para que quedeen registradas en known_hosts
-sudo ssh adminUsername@20.126.54.157
-sudo ssh adminUsername@20.126.82.81
-sudo ssh adminUsername@20.126.22.70
+sudo ssh adminUsername@40.68.119.5
+sudo ssh adminUsername@20.107.7.92
+sudo ssh adminUsername@13.95.17.175
+
+
 
 
 sudo ansible-playbook -i hosts k8s-01-common.yaml
 sudo ansible-playbook -i hosts -l nfs nfs.yaml
 sudo ansible-playbook -i hosts -l master,worker k8s-05-master-worker.yaml
+sudo ansible-playbook -i hosts -l master k8s-02-master
 #ansible-playbook -i hosts -l worker k8s-05-master-worker.yaml
 #con este deploy no va a desplegar. 
 #cuando ejecute el pbook que inicializa el cluster(que tengo que poner aquí), me va a decir que 
