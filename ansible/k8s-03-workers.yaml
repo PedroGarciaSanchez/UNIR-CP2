@@ -1,4 +1,4 @@
-- name: instalar paquetes
+- name: instalar en workers
   hosts: all
   var_files:
   -"group_vars/k8s-workers.yaml"

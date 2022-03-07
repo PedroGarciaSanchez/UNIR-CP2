@@ -9,6 +9,18 @@
 #       immediate: yes
 #       state: enabled
 #   become: true
+- name: instalar paquetes rpm 
+  dnf: 
+    name: 'firewalld'
+    state: present
+  become: true  
+
+- name: Make sure a firewall is running
+  ansible.builtin.systemd:
+    state: started
+    name: firewall
+    enabled: yes
+  become: true 
 
 - name: FirewallD rules
   firewalld:
