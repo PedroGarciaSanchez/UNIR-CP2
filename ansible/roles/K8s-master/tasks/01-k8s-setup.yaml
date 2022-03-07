@@ -16,7 +16,8 @@
   become: true  
 
 - name: Make sure a firewall is running
-  ansible.builtin.systemd:
+ # ansible.builtin.systemd:
+  systemd:
     state: started
     name: firewalld
     enabled: yes
