@@ -1,6 +1,6 @@
-#- name: firewalld setup 1
-#  command: "firewall-cmd --permanent --add-port=6443/tcp"
-#  become: true  
+- name: firewalld setup 1
+  command: "firewall-cmd --permanent --add-port=6443/tcp"
+  become: true  
 
 # - name: permit traffic in default zone on port 6443/tcp 
 #     firewalld: 
@@ -9,44 +9,44 @@
 #       immediate: yes
 #       state: enabled
 #   become: true
-- name: instalar paquetes rpm 
-  dnf: 
-    name: 'firewalld'
-    state: present
+# - name: instalar paquetes rpm 
+#   dnf: 
+#     name: 'firewalld'
+#     state: present
+#   become: true  
+
+# - name: Make sure a firewall is running
+#  # ansible.builtin.systemd:
+#   systemd:
+#     state: started
+#     name: firewalld
+#     enabled: yes
+#   become: true 
+
+# - name: FirewallD rules
+#   firewalld:
+#     permanent: yes
+#     immediate: yes
+#     port: "{{item.port}}/{{item.proto}}"
+#     state: enabled
+#   with_items:
+#     - {port: "6443",proto: "tcp"}
+#     - {port: "2379-2380",proto: "tcp"}
+#     - {port: "10250-10252", proto: "tcp" }
+#     - {port: "10255",proto: "tcp"}     
+#   become: true   
+   
+- name: firewalld setup 2
+  command: "firewall-cmd --permanent --add-port=2379-2380/tcp"
   become: true  
 
-- name: Make sure a firewall is running
- # ansible.builtin.systemd:
-  systemd:
-    state: started
-    name: firewalld
-    enabled: yes
-  become: true 
-
-- name: FirewallD rules
-  firewalld:
-    permanent: yes
-    immediate: yes
-    port: "{{item.port}}/{{item.proto}}"
-    state: enabled
-  with_items:
-    - {port: "6443",proto: "tcp"}
-    - {port: "2379-2380",proto: "tcp"}
-    - {port: "10250-10252", proto: "tcp" }
-    - {port: "10255",proto: "tcp"}     
-  become: true   
-   
-# - name: firewalld setup 2
-#   command: "firewall-cmd --permanent --add-port=2379-2380/tcp"
-#   become: true  
-
-# - name: firewalld setup 3
-#   command: "firewall-cmd --permanent --add-port=10250-10252/tcp"
-#   become: true  
+- name: firewalld setup 3
+  command: "firewall-cmd --permanent --add-port=10250-10252/tcp"
+  become: true  
   
-# - name: firewalld setup 4
-#   command: "firewall-cmd --permanent --add-port=10255/tcp"
-#   become: true  
+- name: firewalld setup 4
+  command: "firewall-cmd --permanent --add-port=10255/tcp"
+  become: true  
         
 - name: firewalld setup 5
   command: "firewall-cmd --reload"
