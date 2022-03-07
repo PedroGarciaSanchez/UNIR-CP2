@@ -3,7 +3,7 @@
 #  become: true 
 
 # Ojo: esto en la guia es con root pero se nos ha dicho que lo hagmos con adminUsername
-- name: Create a directory /adminUsername/.kube if it does not exist
+- name: Create a directory /home/adminUsername/.kube if it does not exist
   ansible.builtin.file:
     path: /home/adminUsername/.kube
     state: directory
@@ -23,7 +23,7 @@
 # command
 
 - name: kubernetes/admin.conf to root k8s root config
-  command: "chown $(id -u):$(id -g) /home/adminUsername/.kube/config"
+  command: "chown adminUsername. /home/adminUsername/.kube/config"
   become: true 
 
 # [root@kubemaster ~]# chown $(id -u):$(id -g) /root/.kube/config
