@@ -15,6 +15,9 @@ sudo ansible-playbook -i hosts -l nfs nfs.yaml
 sudo ansible-playbook -i hosts -l master,worker k8s-05-master-worker.yaml
 sudo ansible-playbook -i hosts -l master k8s-02-master.yaml
 sudo ansible-playbook -i hosts -l master k8s-02-master_after_manual.yaml
+sudo ansible-playbook -i hosts -l worker k8s-02-worker_after_manual.yaml
+sudo ansible-playbook -i hosts -l master k8s-02-master_after_reboot.yaml
+
 #ansible-playbook -i hosts -l worker k8s-05-master-worker.yaml
 #con este deploy no va a desplegar. 
 #cuando ejecute el pbook que inicializa el cluster(que tengo que poner aquí), me va a decir que 
