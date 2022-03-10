@@ -1,0 +1,11 @@
+- name: create namespace
+  command: "kubectl create namespace webapp-routed"
+
+- name: install SDN in Azure
+  command: "kubectl apply -f jenkins-routed-app.yaml"
+
+- name: install SDN in Azure
+  command: "kubectl apply -f ingress.yaml"  
+
+- name: install SDN in Azure
+  command: "kubectl apply -f configmap.yaml"    

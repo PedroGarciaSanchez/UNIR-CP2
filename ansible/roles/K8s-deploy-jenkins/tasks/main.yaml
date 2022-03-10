@@ -1,0 +1,2 @@
+- include_tasks: 01-copy-3-yamls.yaml 
+- include_tasks: 02-apply-3-yamls.yaml 

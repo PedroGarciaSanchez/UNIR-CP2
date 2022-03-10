@@ -1,0 +1,26 @@
+- name: Añadimos yaml 1
+  copy:
+    src: jenkins-routed-app.yaml
+    dest: /home/adminUsername
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+  become: true  
+
+- name: Añadimos yaml 2
+  copy:
+    src: configmap.yaml
+    dest: /home/adminUsername
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+  become: true  
+
+- name: Añadimos yaml 3
+  copy:
+    src: ingress.yaml
+    dest: /home/adminUsername
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+  become: true      

@@ -6,3 +6,7 @@
 #output: 
 # las instrucciones que salen las ejecuto después en K8s-master-after-manual
 # Guardo el comando kubeadm que sale al final, ya que lo necesitaré para unir los workers al clúster.
+#Cambio en group_vars los valores:
+-token
+-hash
+por los que me devuelve el output

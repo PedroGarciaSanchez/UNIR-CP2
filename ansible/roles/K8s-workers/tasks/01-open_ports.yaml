@@ -4,5 +4,15 @@
 
 - name: open ports
   command: "firewall-cmd --reload"
-  become: true     
+  become: true  
+
+- name: join
+  #command: "kubeadm join 192.168.1.110:6443 --token t46nt5.fcwef0nq31x9nhjb --discovery-token-ca-cert-hash sha256:d2cd35c9ab95f4061aa9d9b993f7e8742b2307516a3632b27ea10b64baf8cd71"
+  #command: "kubeadm join 192.168.1.110:6443 --token {{ token }} --discovery-token-ca-cert-hash ssh256:{{hash}}"
+  command: "kubeadm join 192.168.1.110:6443 --token t46nt5.fcwef0nq31x9nhjb --discovery-token-ca-cert-hash sha256:e4f1428be27ce171121d4248cf08b07e8bfb792cb54233a0c1830e433ee37c83"
+  become: true  
+
+#  Token: t46nt5.fcwef0nq31x9nhjb
+#Hash: e4f1428be27ce171121d4248cf08b07e8bfb792cb54233a0c1830e433ee37c83
+       
 
