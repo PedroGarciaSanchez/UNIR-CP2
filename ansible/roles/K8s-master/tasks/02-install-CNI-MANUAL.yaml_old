@@ -1,4 +1,4 @@
-# sudo kubeadm init --pod-network-cidr 192.169.0.1/16
+# sudo kubeadm init --pod-network-cidr 192.169.1.0/16
 
 
 #OJO!!!!!!!!!!!!!, estaba MAL la IP en la guía: 192.169.0.0/16
