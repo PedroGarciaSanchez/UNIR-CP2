@@ -1,4 +1,8 @@
-# sudo kubeadm init --pod-network-cidr 192.169.0.0/16
+# sudo kubeadm init --pod-network-cidr 192.169.0.1/16
+
+
+#OJO!!!!!!!!!!!!!, estaba MAL la IP en la guía: 192.169.0.0/16
+
 #output: 
 # las instrucciones que salen las ejecuto después en K8s-master-after-manual
 # Guardo el comando kubeadm que sale al final, ya que lo necesitaré para unir los workers al clúster.

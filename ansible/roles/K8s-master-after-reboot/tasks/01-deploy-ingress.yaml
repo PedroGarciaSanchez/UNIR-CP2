@@ -1,3 +1,6 @@
+#tienes configurado el usuaurio adminUSername para utilizar kubectl, pero root no. 
+#Con lo cual tienes que lanzar todos los comando kubelet con adminUSername,
+#y eso significa que no tienes que utilizar become.
 - name: deploy ingress
   command: "kubectl apply -f https://raw.githubusercontent.com/haproxytech/kubernetes-ingress/master/deploy/haproxy-ingress.yaml"
   #become: true 
