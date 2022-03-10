@@ -1,6 +1,10 @@
 - name: open ports
-  command: "firewall-cmd --zone=public --permanent --add-port={10250,30000-32767}/tcp"
+  command: "firewall-cmd --permanent --add-port=30000-32767/tcp"
   become: true   
+
+- name: open ports
+  command: "firewall-cmd --permanent --add-port=10250/tcp"
+  become: true     
 
 - name: open ports
   command: "firewall-cmd --reload"
