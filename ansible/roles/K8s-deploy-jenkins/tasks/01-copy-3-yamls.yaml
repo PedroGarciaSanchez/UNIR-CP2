@@ -1,62 +1,62 @@
-# - name: Añadimos yaml 1
-#   copy:
-#     src: jenkins-routed-app.yaml
-#     dest: /home/adminUsername
-#     owner: root
-#     group: root
-#     mode: "u=rw,g=r,o=r"
-#   become: true  
-
-# - name: Añadimos yaml 2
-#   copy:
-#     src: configmap.yaml
-#     dest: /home/adminUsername
-#     owner: root
-#     group: root
-#     mode: "u=rw,g=r,o=r"
-#   become: true  
-
-# - name: Añadimos yaml 3
-#   copy:
-#     src: ingress.yaml
-#     dest: /home/adminUsername
-#     owner: root
-#     group: root
-#     mode: "u=rw,g=r,o=r"
-#   become: true      
-
-- name: Añadimos jenkins 
+- name: Añadimos yaml 1
   copy:
-    src: jenkins.yaml
+    src: jenkins-routed-app.yaml
+    dest: /home/adminUsername
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+  become: true  
+
+- name: Añadimos yaml 2
+  copy:
+    src: configmap.yaml
+    dest: /home/adminUsername
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+  become: true  
+
+- name: Añadimos yaml 3
+  copy:
+    src: ingress.yaml
     dest: /home/adminUsername
     owner: root
     group: root
     mode: "u=rw,g=r,o=r"
   become: true      
 
-- name: Añadimos jenkins-service
-  copy:
-    src: jenkins-service.yaml
-    dest: /home/adminUsername
-    owner: root
-    group: root
-    mode: "u=rw,g=r,o=r"
-  become: true        
+# - name: Añadimos jenkins 
+#   copy:
+#     src: jenkins.yaml
+#     dest: /home/adminUsername
+#     owner: root
+#     group: root
+#     mode: "u=rw,g=r,o=r"
+#   become: true      
 
-- name: Añadimos ingress-jenkins
-  copy:
-    src: ingress-jenkins.yaml
-    dest: /home/adminUsername
-    owner: root
-    group: root
-    mode: "u=rw,g=r,o=r"
-  become: true         
+# - name: Añadimos jenkins-service
+#   copy:
+#     src: jenkins-service.yaml
+#     dest: /home/adminUsername
+#     owner: root
+#     group: root
+#     mode: "u=rw,g=r,o=r"
+#   become: true        
 
-- name: Añadimos configmap-jenkins
-  copy:
-    src: configmap-jenkins.yaml
-    dest: /home/adminUsername
-    owner: root
-    group: root
-    mode: "u=rw,g=r,o=r"
-  become: true         
+# - name: Añadimos ingress-jenkins
+#   copy:
+#     src: ingress-jenkins.yaml
+#     dest: /home/adminUsername
+#     owner: root
+#     group: root
+#     mode: "u=rw,g=r,o=r"
+#   become: true         
+
+# - name: Añadimos configmap-jenkins
+#   copy:
+#     src: configmap-jenkins.yaml
+#     dest: /home/adminUsername
+#     owner: root
+#     group: root
+#     mode: "u=rw,g=r,o=r"
+#   become: true         
