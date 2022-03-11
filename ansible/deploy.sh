@@ -16,7 +16,7 @@ sudo ansible-playbook -i hosts -l master,worker k8s-05-master-worker.yaml
 sudo ansible-playbook -i hosts -l master k8s-02-master.yaml
 #parte manual
 sudo ansible-playbook -i hosts -l master k8s-02-master_after_manual.yaml
-sudo ansible-playbook -i hosts -l worker k8s-02-worker_after_manual.yaml
+sudo ansible-playbook -i hosts -l worker,master k8s-02-worker_after_manual.yaml
 sudo ansible-playbook -i hosts -l master k8s-02-master_after_reboot.yaml
 
 sudo ansible-playbook -i hosts -l worker k8s-03-workers.yaml

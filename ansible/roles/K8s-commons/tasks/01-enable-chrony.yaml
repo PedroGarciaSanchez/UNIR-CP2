@@ -8,6 +8,7 @@
     state: present
   become: true  
 
+#PGS: usar esto!!!! https://docs.ansible.com/ansible/2.5/modules/systemd_module.html
 - name: enable chronyd
   command: "systemctl enable chronyd"
   become: true  
