@@ -2,8 +2,8 @@ rpm: ['net-tools']
 nfsdir: '/srv/nfs'
 #master: 'my-master-azure-vm'
 #workers: 'my-worker1-azure-vm'
-token: ''
-hash: ''
+token: 'nz7chx.8j3b863yuntwzoc8'
+hash: '93ba008bef3863124f255c285d51ca9b4088974d974484210d51e87e16e61e6b'
 
 
 
