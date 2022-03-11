@@ -11,8 +11,8 @@
   command: "kubectl apply -f configmap.yaml --namespace webapp-routed"    
 
 
-  - name: create namespace
-  command: "kubectl create namespace webapp-routed"
+#  - name: create namespace
+#  command: "kubectl create namespace webapp-routed"
 
 # - name: install SDN in Azure
 #   command: "kubectl apply -f jenkins.yaml"
