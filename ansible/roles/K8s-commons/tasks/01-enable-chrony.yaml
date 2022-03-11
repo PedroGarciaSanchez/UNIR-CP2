@@ -9,13 +9,21 @@
   become: true  
 
 #PGS: usar esto!!!! https://docs.ansible.com/ansible/2.5/modules/systemd_module.html
-- name: enable chronyd
-  command: "systemctl enable chronyd"
-  become: true  
 
-- name: start chronyd
-  command: "systemctl start chronyd"
-  become: true    
+- name: enable chronyd
+  systemd:
+    name: chronyd
+    state: started
+    enabled: True  
+
+# - name: enable chronyd
+#   command: "systemctl enable chronyd"
+#   become: true  
+
+# - name: start chronyd
+#   command: "systemctl start chronyd"
+#   become: true    
+
 
 - name: timedatectl set-ntp true
   command: "timedatectl set-ntp true"
