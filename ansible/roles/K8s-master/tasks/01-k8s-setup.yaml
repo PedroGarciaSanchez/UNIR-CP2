@@ -1,14 +1,22 @@
-- name: firewalld setup 1
-  command: "firewall-cmd --permanent --add-port=6443/tcp"
+#- name: firewalld setup 1
+#  command: "firewall-cmd --permanent --add-port=6443/tcp"
+#  become: true  
+
+- name: enable firewalld
+  systemd:
+    name: firewalld
+    state: started
+    enabled: True  
   become: true  
 
-# - name: permit traffic in default zone on port 6443/tcp 
-#     firewalld: 
-#       port: 6443/tcp 
-#       permanent: yes 
-#       immediate: yes
-#       state: enabled
-#   become: true
+- name: permit traffic in default zone on port 6443/tcp 
+    ansible.posix.firewalld: 
+      port: 6443/tcp 
+      permanent: yes 
+      immediate: yes
+      state: enabled
+  become: true
+
 # - name: instalar paquetes rpm 
 #   dnf: 
 #     name: 'firewalld'
