@@ -1,0 +1,8 @@
+- name: instalar en workers
+  hosts: all
+  vars_files:
+    - "group_vars/k8s-worker.yaml"
+  gather_facts: false
+  roles: 
+  - K8s-workers
+ 
