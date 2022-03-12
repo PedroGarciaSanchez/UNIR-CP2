@@ -25,7 +25,7 @@ resource "azurerm_network_security_group" "mySecGroup" {
  #       access                     = "Allow"
  #       protocol                   = "Tcp"
  #       source_port_range          = "*"
- #       destination_port_range     = "32104"
+ #       destination_port_range     = "30356"
  #       source_address_prefix      = "*"
  #       destination_address_prefix = "*"
  #   }

@@ -1,4 +1,4 @@
-- name: Añadimos yaml 1
+- name: Añadimos yaml jenkins-routed-app
   copy:
     src: jenkins-routed-app.yaml
     dest: /home/adminUsername
@@ -7,7 +7,7 @@
     mode: "u=rw,g=r,o=r"
   become: true  
 
-- name: Añadimos yaml 2
+- name: Añadimos yaml configmap
   copy:
     src: configmap.yaml
     dest: /home/adminUsername
@@ -16,7 +16,7 @@
     mode: "u=rw,g=r,o=r"
   become: true  
 
-- name: Añadimos yaml 3
+- name: Añadimos yaml ingress
   copy:
     src: ingress.yaml
     dest: /home/adminUsername

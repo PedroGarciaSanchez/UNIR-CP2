@@ -14,7 +14,7 @@
 # [root@kubemaster ~]# mkdir -p /root/.kube
 # file
 
-- name: kubernetes/admin.conf to root k8s root config
+- name: kubernetes/admin.conf to root k8s root config 1
   command: "cp -i /etc/kubernetes/admin.conf /home/adminUsername/.kube/config"
   become: true 
 
@@ -22,7 +22,7 @@
 # [root@kubemaster ~]# cp -i /etc/kubernetes/admin.conf /root/.kube/config
 # command
 
-- name: kubernetes/admin.conf to root k8s root config
+- name: kubernetes/admin.conf to root k8s root config 2
   command: "chown adminUsername. /home/adminUsername/.kube/config"
   become: true 
 

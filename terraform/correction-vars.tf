@@ -1,7 +1,7 @@
 #variable "location" {
 #  type = string
 #  description = "Región de Azure donde crearemos la infraestructura"
-#  default = "<YOUR REGION>" 
+#  default = "West Europe" 
 #}
 
 #variable "storage_account" {
@@ -19,5 +19,5 @@
 #variable "ssh_user" {
 #  type = string
 #  description = "Usuario para hacer ssh"
-#  default = "adminUsername"
+#  default = "pedrogsa"
 #}

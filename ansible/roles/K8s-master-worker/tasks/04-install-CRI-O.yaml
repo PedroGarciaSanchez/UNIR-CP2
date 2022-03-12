@@ -27,14 +27,14 @@
     mode: u=rw,g=r,o=r
   become: true          
 
-- name: Add a line 
+- name: Add line 1 to /etc/modules-load.d/crio.conf
   ansible.builtin.lineinfile:
     path: /etc/modules-load.d/crio.conf
     line: overlay
     create: yes
   become: true       
        
-- name: Add a line 
+- name: Add line 2 to /etc/modules-load.d/crio.conf 
   ansible.builtin.lineinfile:
     path: /etc/modules-load.d/crio.conf
     line: br_netfilter
@@ -45,7 +45,7 @@
 #[root@host ~]# systemctl enable crio
 #[root@host ~]# systemctl start crio
 
-- name: instalar paquetes rpm 
+- name: instalar paquete cri-o 
   dnf: 
     name: 'cri-o'
     state: present

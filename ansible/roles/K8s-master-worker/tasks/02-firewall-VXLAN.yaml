@@ -33,7 +33,7 @@
 
 # END SDN 
 
-- name: comunicacion de PODS en el cluster mediante VXLAN paso 3
+- name: firewall reload
   command: "firewall-cmd --reload"
   become: true       
 

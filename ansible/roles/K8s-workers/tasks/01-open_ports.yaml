@@ -1,24 +1,17 @@
-- name: open ports
+- name: open ports 30000-32767 in worker
   command: "firewall-cmd --permanent --add-port=30000-32767/tcp"
   become: true   
 
-- name: open ports
+- name: open port 10250 in worker
   command: "firewall-cmd --permanent --add-port=10250/tcp"
   become: true     
 
-- name: open ports
+- name: firewall-cmd --reload
   command: "firewall-cmd --reload"
   become: true  
 
 - name: join
-  #command: "kubeadm join 192.168.1.110:6443 --token t46nt5.fcwef0nq31x9nhjb --discovery-token-ca-cert-hash sha256:d2cd35c9ab95f4061aa9d9b993f7e8742b2307516a3632b27ea10b64baf8cd71"
   command: "kubeadm join 10.0.1.10:6443 --token {{ token }} --discovery-token-ca-cert-hash sha256:{{hash}}"
-  #command: "kubeadm join 10.0.1.10:6443 --token nz7chx.8j3b863yuntwzoc8 --discovery-token-ca-cert-hash sha256:93ba008bef3863124f255c285d51ca9b4088974d974484210d51e87e16e61e6b"
-
-  #command: "kubeadm join 10.0.1.10:6443 --token t46nt5.fcwef0nq31x9nhjb --discovery-token-ca-cert-hash sha256:e4f1428be27ce171121d4248cf08b07e8bfb792cb54233a0c1830e433ee37c83"
   become: true  
 
-#  Token: t46nt5.fcwef0nq31x9nhjb
-#Hash: e4f1428be27ce171121d4248cf08b07e8bfb792cb54233a0c1830e433ee37c83
-       
 
