@@ -10,11 +10,11 @@
   become: true  
 
 - name: permit traffic in default zone on port 6443/tcp 
-    ansible.posix.firewalld: 
-      port: 6443/tcp 
-      permanent: yes 
-      immediate: yes
-      state: enabled
+  ansible.posix.firewalld: 
+    port: 6443/tcp 
+    permanent: yes 
+    immediate: yes
+    state: enabled
   become: true
 
 # - name: instalar paquetes rpm 
