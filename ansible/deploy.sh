@@ -14,6 +14,7 @@ sudo ansible-playbook -i hosts k8s-01-common.yaml
 sudo ansible-playbook -i hosts -l nfs nfs.yaml
 sudo ansible-playbook -i hosts -l master,worker k8s-05-master-worker.yaml
 sudo ansible-playbook -i hosts -l master k8s-02-master.yaml
+
 #parte manual en master:
 # sudo kubeadm init --pod-network-cidr 192.169.1.0/16
 
