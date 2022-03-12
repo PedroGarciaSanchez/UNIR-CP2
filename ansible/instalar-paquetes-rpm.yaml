@@ -1,9 +1,0 @@
--name: instalar paquetes
-  hosts: all
-  var_files:
-  -"group_vars/instalar.yaml"
-  -"group_vars/configuracion.yaml"
-  gather_facts: false
-  roles: 
-  -instalar
-  -configuracion
