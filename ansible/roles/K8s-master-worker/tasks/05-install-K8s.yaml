@@ -11,6 +11,13 @@
   command: "dnf install kubelet kubeadm kubectl --disableexcludes=kubernetes -y"
   become: true 
 
+#- name: enable kubelet
+#  systemd:
+#    name: kubelet
+#    state: started
+#    enabled: True 
+#  become: true    
+
 - name: install K8s 2
   command: "systemctl enable kubelet"
   become: true 

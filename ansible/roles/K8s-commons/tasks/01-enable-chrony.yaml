@@ -14,7 +14,8 @@
   systemd:
     name: chronyd
     state: started
-    enabled: True  
+    enabled: True 
+  become: true   
 
 # - name: enable chronyd
 #   command: "systemctl enable chronyd"

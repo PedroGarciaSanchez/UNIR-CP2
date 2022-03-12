@@ -1,4 +1,11 @@
 #PGS: usar esto!!!! https://docs.ansible.com/ansible/2.5/modules/systemd_module.html
+#- name: enable chronyd
+#  systemd:
+#    name: firewalld
+#    state: started
+#    enabled: True  
+#  become: true  
+
 - name: enable firewalld
   command: "systemctl enable firewalld"
   become: true    
