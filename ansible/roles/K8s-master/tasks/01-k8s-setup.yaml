@@ -4,13 +4,13 @@
 
 - name: enable firewalld
   systemd:
-    name: ansible.posix.firewalld
+    name: firewalld
     state: started
     enabled: True  
   become: true  
 
 - name: permit traffic in default zone on port 6443/tcp 
-  ansible.posix.firewalld: 
+  firewalld: 
     port: 6443/tcp 
     permanent: yes 
     immediate: yes
