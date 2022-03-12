@@ -10,7 +10,7 @@
   become: true  
 
 - name: permit traffic in default zone on port 6443/tcp 
-  firewalld: 
+  ansible.posix.firewalld: 
     port: 6443/tcp 
     permanent: yes 
     immediate: yes
