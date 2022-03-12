@@ -4,7 +4,7 @@
 
 - name: enable firewalld
   systemd:
-    name: firewalld
+    name: ansible.posix.firewalld
     state: started
     enabled: True  
   become: true  
