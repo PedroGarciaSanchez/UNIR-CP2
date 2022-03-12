@@ -1,5 +1,0 @@
-- name: instalar master tras parte manual
-  hosts: all
-  gather_facts: false
-  roles: 
-    - K8s-master-after-manual

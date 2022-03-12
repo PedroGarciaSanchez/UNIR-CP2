@@ -1,5 +1,0 @@
-- name: instalar ingress despues del reboot
-  hosts: all
-  gather_facts: false
-  roles: 
-    - K8s-master-after-reboot

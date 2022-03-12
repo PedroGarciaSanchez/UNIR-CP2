@@ -1,5 +1,0 @@
-- name: reboot de worker tras parte manual
-  hosts: all
-  gather_facts: false
-  roles: 
-    - K8s-worker-after-manual
