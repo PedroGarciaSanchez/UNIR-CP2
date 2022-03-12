@@ -52,20 +52,20 @@
   become: true  
 
 
-# - name: Make sure a firewall is running
-#   systemd:
-#     state: started
-#     name: crio
-#     enabled: yes
-#   become: true 
+- name: Make sure crio is running
+  systemd:
+    name: crio
+    state: started
+    enabled: True
+  become: true 
 
-- name: systemctl enable crio
-  command: "systemctl enable crio"
-  become: true  
+# - name: systemctl enable crio
+#   command: "systemctl enable crio"
+#   become: true  
 
-- name: systemctl start crio
-  command: "systemctl start crio"
-  become: true    
+# - name: systemctl start crio
+#   command: "systemctl start crio"
+#   become: true    
 
 
 
