@@ -1,3 +1,4 @@
+#abrir los puertos:
 - name: open ports 30000-32767 in worker
   command: "firewall-cmd --permanent --add-port=30000-32767/tcp"
   become: true   
@@ -10,6 +11,8 @@
   command: "firewall-cmd --reload"
   become: true  
 
+# para unirel worker al clúster ejecutamos en los nodos el comando de kubeadm que
+# nos produjo la ejecución de kubadmin init:
 - name: join
   command: "kubeadm join 10.0.1.10:6443 --token {{ token }} --discovery-token-ca-cert-hash sha256:{{hash}}"
   become: true  

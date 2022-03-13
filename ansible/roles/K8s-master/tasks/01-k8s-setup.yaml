@@ -1,8 +1,3 @@
-- name: firewalld setup 1
-  command: "firewall-cmd --permanent --add-port=6443/tcp"
-  become: true  
-
-
 
 # PGS: ESTOS SON VARIOS INTENTOS DE UTILIZAR EL MODULO firewalld y ansible.posix.firewalld
 #CONSULTANDO EN LOS FOROS, PERO NO HA HABIDO MANERA
@@ -43,6 +38,21 @@
 #     - {port: "10250-10252", proto: "tcp" }
 #     - {port: "10255",proto: "tcp"}     
 #   become: true   
+
+#Configuramos el firewall para acceder a los servicios de kubernetes:
+
+# Protocol    Direction Port Range   Purpose                   Used-by
+# TCP         Inbound   6443         Kubernetes API Server     All
+# TCP         Inbound   2379-2380    etcd server client API    kube-apiserver, etcd
+# TCP         Inbound   10250        Kubelet API               self, Control Plane
+# TCP         Inbound   10251        kube-scheduler            self
+# TCP         Inbound   10252        kube-controller-manager   self
+# TCP         Inbound   10255        Statistics                Master nodes
+
+
+- name: firewalld setup 1
+  command: "firewall-cmd --permanent --add-port=6443/tcp"
+  become: true  
    
 - name: firewalld setup 2
   command: "firewall-cmd --permanent --add-port=2379-2380/tcp"
@@ -63,6 +73,10 @@
 - name: Configuramos kudeadm
   command: "kubeadm config images pull"
   become: true  
+
+# Permitiremos el acceso desde los workers.
+#Esto no es una buena práctica. En un entorno en producción deberíamos permitir únicamente 
+#el tráfico necesario y no todo el tráfico entre el master y los workers.
 
 - name: Permitiremos el acceso desde los workers 1
   command: "firewall-cmd --permanent --add-rich-rule 'rule family=ipv4 source address=10.0.1.11/32 accept'"

@@ -9,6 +9,7 @@
   command: "modprobe br_netfilter"
   become: true    
 
+#transparent masquerading: para que los PODs puedan comunicarse dentro del cluster mediante VXLAN:
 - name: comunicacion de PODS en el cluster mediante VXLAN paso 2
   command: "firewall-cmd --add-masquerade --permanent"
   become: true  

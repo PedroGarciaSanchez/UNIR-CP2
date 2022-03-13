@@ -1,0 +1,5 @@
+#espera a que la máquina arranque
+- name: reboot
+  reboot:
+    reboot_timeout: 300
+  become: true  

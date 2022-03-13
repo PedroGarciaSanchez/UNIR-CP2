@@ -1,6 +1,8 @@
-#tienes configurado el usuaurio adminUSername para utilizar kubectl, pero root no. 
+#tengo configurado el usuario adminUSername para utilizar kubectl, pero root no. 
 #Con lo cual tienes que lanzar todos los comando kubelet con adminUSername,
-#y eso significa que no tienes que utilizar become.
+#y eso significa que no hay que utilizar become.
+
+#Para poder acceder a los PODs desde fuera de kubernetes necesitaremos instalar un ingress controller.
 - name: deploy ingress
   command: "kubectl apply -f https://raw.githubusercontent.com/haproxytech/kubernetes-ingress/master/deploy/haproxy-ingress.yaml"
   #become: true 
@@ -10,6 +12,12 @@
 # Comprobaciones :
 # kubectl get namespaces
 # kubectl get pods --namespace=haproxy-controller
+
+# kubectl get svc -A
+# La salida nos indica estos mapeos host-contenedores:
+#El puerto del host xxxxx se encuentra mapeado al 80 (http) de los contenedores.
+#El puerto del host xxxxx se encuentra mapeado al 443 (https)de los contenedores.
+#El puerto del host xxxxx se encuentra mapeado al 1024 (tcp para estadísticas de haproxy) de los contenedores. 
 
 
 

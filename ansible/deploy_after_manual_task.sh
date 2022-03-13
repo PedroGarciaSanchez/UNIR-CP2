@@ -3,7 +3,7 @@
 sudo ansible-playbook -i hosts -l master k8s-04-master_after_manual.yaml
 sudo ansible-playbook -i hosts -l master k8s-05-master_after_reboot.yaml
 sudo ansible-playbook -i hosts -l worker k8s-06-workers.yaml
-sudo ansible-playbook -i hosts -l worker,master k8s-07-worker_after_manual.yaml
+sudo ansible-playbook -i hosts -l worker,master k8s-07-reboot-master-worker.yaml
 
 #[root@kubemaster ~]# kubectl get pods -A -o wide : para ver las 169 y el haproxy running
 #[root@kubemaster ~]# kubectl get svc -A
