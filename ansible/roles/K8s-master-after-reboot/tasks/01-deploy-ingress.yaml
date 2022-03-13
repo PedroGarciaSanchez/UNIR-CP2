@@ -13,7 +13,3 @@
 
 
 
-# Manual: del siguiente comando cogeremos el puerto para la security rule de Terraform.
-# Es el que se encuentra mapeado al 80 de los contenedores
-# [root@kubemaster ~]# kubectl get svc -A
-

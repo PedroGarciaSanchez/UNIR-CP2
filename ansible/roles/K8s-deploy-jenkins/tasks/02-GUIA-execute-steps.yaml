@@ -2,13 +2,16 @@
   command: "kubectl create namespace devops-tools"
 
 - name: apply del yaml principal
-  command: "kubectl apply -f jenkins-routed-app.yaml --namespace webapp-routed"
+  command: "kubectl apply -f GUIA-serviceAccount.yaml"
 
 - name: apply del ingress
-  command: "kubectl apply -f ingress.yaml --namespace webapp-routed"  
+  command: "kubectl apply -f GUIA-volume.yaml"  
 
 - name: apply del configmap
-  command: "kubectl apply -f configmap.yaml --namespace webapp-routed"    
+  command: "kubectl apply -f GUIA-deployment.yaml"   
+  
+- name: apply del configmap
+  command: "kubectl apply -f GUIA-ingress.yaml"    
 
 
 #  - name: create namespace

@@ -41,10 +41,6 @@
     create: yes
   become: true    
 
-#  [root@host ~]# dnf install cri-o -y
-#[root@host ~]# systemctl enable crio
-#[root@host ~]# systemctl start crio
-
 - name: instalar paquete cri-o 
   dnf: 
     name: 'cri-o'
@@ -58,15 +54,6 @@
     state: started
     enabled: True
   become: true 
-
-# - name: systemctl enable crio
-#   command: "systemctl enable crio"
-#   become: true  
-
-# - name: systemctl start crio
-#   command: "systemctl start crio"
-#   become: true    
-
 
 
 

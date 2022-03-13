@@ -11,10 +11,3 @@
     enabled: True 
   become: true   
 
-#- name: enable nfs-server
-#  command: "systemctl enable nfs-server"
-#  become: true  
-
-#- name: start nfs-server
-#  command: "systemctl start nfs-server"
-#  become: true   

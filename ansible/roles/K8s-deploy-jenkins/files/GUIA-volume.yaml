@@ -22,8 +22,8 @@ spec:
     storage: 10Gi
   accessModes:
     - ReadWriteOnce
-  local:
-    path: /mnt
+  #local:
+  #  path: /mnt
   nodeAffinity:
     required:
       nodeSelectorTerms:

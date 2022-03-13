@@ -1,3 +1,4 @@
+#ESto se nos ha indicado que no es necesario
 #- name: export KUBECONFIG
 #  command: "export KUBECONFIG=/etc/kubernetes/admin.conf"
 #  become: true 
@@ -10,24 +11,13 @@
     mode: '0755'
   become: true   
 
-
-# [root@kubemaster ~]# mkdir -p /root/.kube
-# file
-
 - name: kubernetes/admin.conf to root k8s root config 1
   command: "cp -i /etc/kubernetes/admin.conf /home/adminUsername/.kube/config"
   become: true 
 
-
-# [root@kubemaster ~]# cp -i /etc/kubernetes/admin.conf /root/.kube/config
-# command
-
 - name: kubernetes/admin.conf to root k8s root config 2
   command: "chown adminUsername. /home/adminUsername/.kube/config"
   become: true 
-
-# [root@kubemaster ~]# chown $(id -u):$(id -g) /root/.kube/config
-# command
 
 - name: Añadimos el repo de kubernetes a /etc/sudoers.d/
   copy:
@@ -38,16 +28,3 @@
     mode: "u=rw,g=r,o=r"
   become: true  
 
-#[root@kubemaster ~]# cat <<EOF > /etc/sudoers.d/adminUsername
-#> ALL            ALL = (ALL) NOPASSWD: ALL
-#> EOF
-
-
-#Comprobar con:
-#  command: "kubectl get nodes"
-
-#[root@kubemaster ~]# mkdir -p /home/kubeadmin/.kube
-#[root@kubemaster ~]# cp -i /etc/kubernetes/admin.conf /home/kubeadmin/.kube/config
-#[root@kubemaster ~]# chown kubeadmin. /home/kubeadmin/.kube/config
-
- 
