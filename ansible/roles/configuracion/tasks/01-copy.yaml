@@ -1,9 +1,0 @@
-- name: copiar en el fichero /etc/exports
-  template:
-  #fichero exports, en directorio /files
-    src: exports
-    dest: /etc/exports
-    owner: root
-    group: root
-    mode: 0644
-  become: true  

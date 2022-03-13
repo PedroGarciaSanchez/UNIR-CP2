@@ -1,9 +1,0 @@
--name: instalar paquetes rpm 
-dnf: 
-  name: 'net-tools'
-  #cuando funcione nettools: este rpms está en group_vars/instalar.yaml:
-  #en los ansible clients habrça que hacer a mano lo que dice en la pag 135, abajo
-  #name: "{{rpms}}
-  #disable-excludes:'kubernetes'
-  state: present
-become: true  

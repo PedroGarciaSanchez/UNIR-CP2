@@ -1,3 +1,0 @@
-- include_tasks: 01-template.yaml
-#- include_tasks: 01-copy.yaml
-- include_tasks: 02-ficheros.yaml
