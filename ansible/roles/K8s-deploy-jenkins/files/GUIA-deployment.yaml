@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenkins
+  name: devops-tools
   namespace: devops-tools
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jenkins-server
+      app: devops-tools
   template:
     metadata:
       labels:
-        app: jenkins-server
+        app: devops-tools
     spec:
       securityContext:
             fsGroup: 1000 
             runAsUser: 1000
       serviceAccountName: jenkins-admin
       containers:
-        - name: jenkins
+        - name: devops-tools
           image: jenkins/jenkins:lts
           resources:
             limits:
