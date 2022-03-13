@@ -1,7 +1,4 @@
 #Commented: didn't work: https://docs.ansible.com/ansible/latest/collections/ansible/posix/selinux_module.html
-#- name: set-timezone
-#  command: "ansible-galaxy collection install ansible.posix"
-#  become: true  
 
 #- name: Disable SELinux
 #  ansible.posix.selinux:

@@ -1,27 +1,27 @@
-#- name: firewalld setup 1
-#  command: "firewall-cmd --permanent --add-port=6443/tcp"
-#  become: true  
-
-- name: enable firewalld
-  systemd:
-    name: ansible.posix.firewalld
-    state: started
-    enabled: True  
+- name: firewalld setup 1
+  command: "firewall-cmd --permanent --add-port=6443/tcp"
   become: true  
 
-- name: permit traffic in default zone on port 6443/tcp 
-  ansible.posix.firewalld: 
-    port: 6443/tcp 
-    permanent: yes 
-    immediate: yes
-    state: enabled
-  become: true
 
-# - name: instalar paquetes rpm 
-#   dnf: 
-#     name: 'firewalld'
-#     state: present
-#   become: true  
+
+# PGS: ESTOS SON VARIOS INTENTOS DE UTILIZAR EL MODULO firewalld y ansible.posix.firewalld
+#CONSULTANDO EN LOS FOROS, PERO NO HA HABIDO MANERA
+
+#- name: enable firewalld
+#  systemd:
+#    name: ansible.posix.firewalld
+#    state: started
+#    enabled: True  
+#  become: true  
+
+#- name: permit traffic in default zone on port 6443/tcp 
+#  ansible.posix.firewalld: 
+#    port: 6443/tcp 
+#    permanent: yes 
+#    immediate: yes
+#    state: enabled
+#  become: true
+
 
 # - name: Make sure a firewall is running
 #  # ansible.builtin.systemd:
@@ -65,7 +65,6 @@
   become: true  
 
 - name: Permitiremos el acceso desde los workers 1
-  #command: "firewall-cmd --permanent --add-rich-rule 'rule family=ipv4 source address=20.126.82.81/32 accept'"
   command: "firewall-cmd --permanent --add-rich-rule 'rule family=ipv4 source address=10.0.1.11/32 accept'"
   become: true  
 
