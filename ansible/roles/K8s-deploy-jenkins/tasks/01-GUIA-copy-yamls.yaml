@@ -1,0 +1,71 @@
+- name: Añadimos yaml jenkins-routed-app
+  copy:
+    src: GUIA-deployment.yaml
+    dest: /home/adminUsername
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+  become: true  
+
+- name: Añadimos yaml configmap
+  copy:
+    src: GUIA-ingress.yaml
+    dest: /home/adminUsername
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+  become: true  
+
+- name: Añadimos yaml ingress
+  copy:
+    src: GUIA-serviceAccount.yaml
+    dest: /home/adminUsername
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+  become: true      
+
+- name: Añadimos yaml ingress
+  copy:
+    src: GUIA-volume.yaml
+    dest: /home/adminUsername
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+  become: true        
+
+# - name: Añadimos jenkins 
+#   copy:
+#     src: jenkins.yaml
+#     dest: /home/adminUsername
+#     owner: root
+#     group: root
+#     mode: "u=rw,g=r,o=r"
+#   become: true      
+
+# - name: Añadimos jenkins-service
+#   copy:
+#     src: jenkins-service.yaml
+#     dest: /home/adminUsername
+#     owner: root
+#     group: root
+#     mode: "u=rw,g=r,o=r"
+#   become: true        
+
+# - name: Añadimos ingress-jenkins
+#   copy:
+#     src: ingress-jenkins.yaml
+#     dest: /home/adminUsername
+#     owner: root
+#     group: root
+#     mode: "u=rw,g=r,o=r"
+#   become: true         
+
+# - name: Añadimos configmap-jenkins
+#   copy:
+#     src: configmap-jenkins.yaml
+#     dest: /home/adminUsername
+#     owner: root
+#     group: root
+#     mode: "u=rw,g=r,o=r"
+#   become: true         

@@ -43,7 +43,7 @@ metadata:
   name: jenkins-pv-claim
   namespace: devops-tools
 spec:
-  storageClassName: local-storage
+  storageClassName: nfs
   accessModes:
     - ReadWriteOnce
   resources:
