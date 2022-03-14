@@ -1,7 +1,0 @@
-- name: Create a login user
-  user:
-    name: "ansible"
-    password: "ansible"
-    groups:
-      - wheel
-    state: present
