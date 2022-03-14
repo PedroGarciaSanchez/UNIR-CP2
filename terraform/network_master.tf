@@ -1,6 +1,8 @@
 # Creación de red
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network
 
+# Manages a virtual network including any configured subnets. Each subnet can optionally be 
+# configured with a security group to be associated with the subnet.
 resource "azurerm_virtual_network" "myNet" {
     name                = "kubernetesnet"
     address_space       = ["10.0.0.0/16"]
@@ -14,6 +16,8 @@ resource "azurerm_virtual_network" "myNet" {
 
 # Creación de subnet
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet
+# Manages a subnet. Subnets represent network segments within the IP space 
+# defined by the virtual network.
 
 resource "azurerm_subnet" "mySubnet" {
     name                   = "terraformsubnet"
@@ -26,6 +30,7 @@ resource "azurerm_subnet" "mySubnet" {
 # Create NIC
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_interface
 
+#Manages a Network Interface.
 resource "azurerm_network_interface" "myNicMaster" {
   name                = "vmnicMaster"  
   location            = azurerm_resource_group.rg.location
@@ -47,6 +52,9 @@ resource "azurerm_network_interface" "myNicMaster" {
 
 # IP pública
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip
+
+#Public IP Addresses aren't allocated until they're assigned to a resource (such as a Virtual Machine
+# or a Load Balancer) by design within Azure
 
 resource "azurerm_public_ip" "myPublicIpMaster" {
   name                = "vmipMaster"

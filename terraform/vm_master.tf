@@ -1,6 +1,7 @@
 # Creamos una máquina virtual
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine
 
+# Manages a Linux Virtual Machine.
 resource "azurerm_linux_virtual_machine" "myVMMaster" {
     name                = "my-master-azure-vm"
     resource_group_name = azurerm_resource_group.rg.name
