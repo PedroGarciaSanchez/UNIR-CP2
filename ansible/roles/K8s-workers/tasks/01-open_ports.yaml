@@ -1,8 +1,11 @@
 #abrir los puertos:
+#Para que k8s no entre en conflicto con otros programas, el rango de puertos
+# predeterminado es 30000-32767,
 - name: open ports 30000-32767 in worker
   command: "firewall-cmd --permanent --add-port=30000-32767/tcp"
   become: true   
 
+#Kubelet API
 - name: open port 10250 in worker
   command: "firewall-cmd --permanent --add-port=10250/tcp"
   become: true     

@@ -39,6 +39,9 @@
 #     - {port: "10255",proto: "tcp"}     
 #   become: true   
 
+
+
+
 #Configuramos el firewall para acceder a los servicios de kubernetes:
 
 # Protocol    Direction Port Range   Purpose                   Used-by

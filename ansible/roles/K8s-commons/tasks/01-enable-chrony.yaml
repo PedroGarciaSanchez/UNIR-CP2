@@ -1,3 +1,4 @@
+#sincronización horaria de las máquinas
 - name: set-timezone
   command: "timedatectl set-timezone Europe/Madrid"
   become: true  

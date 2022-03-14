@@ -20,6 +20,9 @@
 #         br_netfilter
 #   become: true
 
+
+# Configurar modulos del kernel necesarios para CRI-O
+
 - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
   ansible.builtin.file:
     path: /etc/modules-load.d/crio.conf
@@ -40,6 +43,8 @@
     line: br_netfilter
     create: yes
   become: true    
+
+  # instalamos el engine de contenedores
 
 - name: instalar paquete cri-o 
   dnf: 

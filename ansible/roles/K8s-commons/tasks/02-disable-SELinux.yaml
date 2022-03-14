@@ -11,6 +11,8 @@
 #    state: disabled
 #  become: true    
 
+#Si SELinux estuviera activado lo desativamos ya que no lo vamos a utilizar con kubernetes:
+
 - name: Disabling SELinux
   command: "sed -i s/=enforcing/=disabled/g /etc/selinux/config"
   become: true  

@@ -1,4 +1,2 @@
-#- include_tasks: 01-copy-3-yamls.yaml 
-#- include_tasks: 02-apply-3-yamls.yaml 
 - include_tasks: 01-GUIA-copy-yamls.yaml
 #- include_tasks: 02-GUIA-execute-steps.yaml

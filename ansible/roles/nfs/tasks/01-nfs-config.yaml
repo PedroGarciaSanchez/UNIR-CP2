@@ -1,3 +1,4 @@
+#Instalación del servidor NFS para ofrecer almacenamiento al cluster de kubernetes.
 - name: Instalamos los paquetes de NFS y arrancamos el servicio
   dnf: 
     name: 'net-tools'

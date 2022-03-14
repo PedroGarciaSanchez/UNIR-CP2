@@ -1,9 +1,9 @@
+# 'nfs-utils','nfs4-acl-tools','wget','python36'
+# Paquetes para NFS (network file system)
+# Wget es una herramienta libre que permite la descarga de contenidos desde 
+# servidores web de una forma simple y rápida. 
 - name: instalar paquetes rpm 
   dnf: 
     name: "{{ rpms }}"
-  #cuando funcione nettools: este rpms está en group_vars/instalar.yaml:
-  #en los ansible clients habrça que hacer a mano lo que dice en la pag 135, abajo
-  #name: "{{rpms}}
-  #disable-excludes:'kubernetes'
     state: present
   become: true  

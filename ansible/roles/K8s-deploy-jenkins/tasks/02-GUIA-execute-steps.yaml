@@ -14,14 +14,3 @@
   command: "kubectl apply -f GUIA-ingress.yaml"    
 
 
-#  - name: create namespace
-#  command: "kubectl create namespace webapp-routed"
-
-# - name: install SDN in Azure
-#   command: "kubectl apply -f jenkins.yaml"
-
-# - name: install SDN in Azure
-#   command: "kubectl apply -f ingress-jenkins.yaml"  
-
-# - name: install SDN in Azure
-#   command: "kubectl apply -f configmap-jenkins.yaml"    

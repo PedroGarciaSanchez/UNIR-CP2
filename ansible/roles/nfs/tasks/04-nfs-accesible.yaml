@@ -1,3 +1,4 @@
+# Releemos el fichero /etc/exports para aplicar la nueva configuración:
 - name: apply config step 1
   command: "exportfs -r"
   become: true  
@@ -43,3 +44,7 @@
 - name: firewall reload
   command: "firewall-cmd --reload"
   become: true    
+
+  #Para verificar que el nodo master y los workers ven el share por nfs podemos ejecutar en cada uno de ellos:
+
+#[root@kubemaster ~]# showmount -e 10.0.1.13

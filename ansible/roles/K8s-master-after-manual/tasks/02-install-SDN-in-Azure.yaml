@@ -1,3 +1,4 @@
+# Instalar SDN en Azure para que los pods puedan comunicarse
 - name: install SDN in Azure
   command: "kubectl apply -f https://docs.projectcalico.org/manifests/canal.yaml"
 

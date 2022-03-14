@@ -1,8 +1,9 @@
 #tengo configurado el usuario adminUSername para utilizar kubectl, pero root no. 
-#Con lo cual tienes que lanzar todos los comando kubelet con adminUSername,
+#Con lo cual tengo que lanzar todos los comando kubelet con adminUSername,
 #y eso significa que no hay que utilizar become.
 
 #Para poder acceder a los PODs desde fuera de kubernetes necesitaremos instalar un ingress controller.
+
 - name: deploy ingress
   command: "kubectl apply -f https://raw.githubusercontent.com/haproxytech/kubernetes-ingress/master/deploy/haproxy-ingress.yaml"
   #become: true 
