@@ -1,6 +1,5 @@
 #!/bin/bash
-#ssh-keygen -f C:\Users\usuariox\.ssh\known_hosts -R 10.71.149.89
-#sudo ansible-galaxy collection install ansible.posix
+
 #Antes de lanzar el primer pllaybook, que va a atodas las máquinas
 #entrar en las máquinas y salir con logout, para que quedeen registradas en known_hosts
 #sudo ssh adminUsername@40.68.119.5
