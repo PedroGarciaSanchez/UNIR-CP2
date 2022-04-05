@@ -1,0 +1,26 @@
+- name: create directory for yaml files
+  file:
+    path: "/home/adminUsername/deployments"
+    owner: adminUsername
+    group: adminUsername
+    mode: 0755
+    state: directory
+  become: true  
+  become_user: adminUsername
+
+- name: Copy jenkins yaml
+  copy:
+    src: DEFINITIVO-jenkins-deploy.yaml
+    dest: "/home/adminUsername/deployment"
+    owner: adminUsername
+    group: adminUsername
+    mode: 0666
+  become: true  
+  become_user: adminUsername
+
+- name: Deploying Jenkins
+  copy:
+    command: "/usr/bin/kubectl apply -f /home/adminUsername/deployment/DEFINITIVO-jenkins-deploy.yaml"
+  become: true    
+  become_user: adminUsername  
+

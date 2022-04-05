@@ -20,6 +20,7 @@ resource "azurerm_network_security_group" "mySecGroup" {
         destination_address_prefix = "*"
     }
 
+   #For http
    # security_rule {
    #     name                       = "K8s"
    #     priority                   = 1002
@@ -31,6 +32,20 @@ resource "azurerm_network_security_group" "mySecGroup" {
    #     source_address_prefix      = "*"
    #     destination_address_prefix = "*"
    # }
+
+   #For Jenkins
+    security_rule {
+        name                       = "K8s"
+        priority                   = 1002
+        direction                  = "Inbound"
+        access                     = "Allow"
+        protocol                   = "Tcp"
+        source_port_range          = "*"
+        destination_port_range     = "32145"
+        source_address_prefix      = "*"
+    #    destination_address_prefix = "*"
+    destination_address_prefix = "10.0.1.11/32"
+    }
 
     tags = {
         environment = "CP2"
